@@ -1,9 +1,14 @@
 import {
+  AnimatePresence,
   ButtonLoginGoogle,
+  FileIcon,
+  HeartIcon,
   images,
   MenuIcon,
   motion,
   MotionContainer,
+  UserIcon,
+  useState,
   Wrapper,
   WrapperMotionView,
   XCircleIcon,
@@ -11,6 +16,12 @@ import {
 import { NavigationList } from './NavigationList';
 
 export function Navigation() {
+  const [isNavOpen, setIsNavOpen] = useState(false);
+
+  const toggleNav = () => {
+    setIsNavOpen(!isNavOpen);
+  };
+
   return (
     <Wrapper>
       <WrapperMotionView>
@@ -26,30 +37,54 @@ export function Navigation() {
                 src={images.LogoDark}
                 alt="randstad Logo"
                 aria-label="randstad Logo"
-                className="max-w-40 lg:max-h-6 lg:mt-[-8px] z-20 relative"
+                className="max-w-[120px] md:max-w-max lg:max-h-6 lg:mt-[-8px] z-20 relative"
               />
             </a>
             <NavigationList className="hidden lg:flex" />
-            <motion.div variants={MotionContainer.item}>
-              <MenuIcon className="lg:hidden" />
-              <ButtonLoginGoogle
-                text="login with Google"
-                className="self-start hidden mt-[-10px] lg:flex"
-              />
+            <motion.div variants={MotionContainer.item} className="flex gap-2 md:gap-4">
+              <button>
+                <HeartIcon />
+              </button>
+              <button>
+                <FileIcon />
+              </button>
+              <button>
+                <UserIcon />
+              </button>
+              <button onClick={toggleNav} className="lg:hidden">
+                <MenuIcon />
+              </button>
             </motion.div>
+            <ButtonLoginGoogle
+              text="login with Google"
+              className="self-start hidden mt-[-10px] lg:flex"
+            />
           </motion.div>
         </nav>
       </WrapperMotionView>
-      <div className="absolute top-0 left-0 z-10 flex flex-col w-full h-screen px-4 py-4 pt-16 overflow-hidden bg-white lg:hidden">
-        <Wrapper>
-          <NavigationList className="flex flex-col pt-4">
-            <ButtonLoginGoogle text="login with Google" />
-          </NavigationList>
-          <motion.div variants={MotionContainer.item}>
-            <XCircleIcon size={32} strokeWidth={1.5} className="absolute top-3 right-4" />
+      <AnimatePresence>
+        {isNavOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="absolute top-0 left-0 z-10 flex flex-col w-full h-screen px-4 py-4 pt-16 overflow-hidden bg-white lg:hidden">
+            <Wrapper>
+              <motion.div initial="hidden" animate="visible">
+                <NavigationList className="flex flex-col pt-4">
+                  <ButtonLoginGoogle text="login with Google" />
+                </NavigationList>
+              </motion.div>
+              <motion.div variants={MotionContainer.item}>
+                <button onClick={toggleNav}>
+                  <XCircleIcon size={32} strokeWidth={1.5} className="absolute top-3 right-4" />
+                </button>
+              </motion.div>
+            </Wrapper>
           </motion.div>
-        </Wrapper>
-      </div>
+        )}
+      </AnimatePresence>
     </Wrapper>
   );
 }
