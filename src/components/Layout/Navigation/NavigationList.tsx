@@ -8,6 +8,9 @@ interface NavItems {
 
 type NavigationListProps = {
   className?: string;
+};
+
+type NavItemsProps = {
   item: NavItems;
   index: number;
   selectedItem: string;
@@ -21,7 +24,7 @@ const list = [
   { name: 'Reports', url: '#', ariaLabel: 'Reports navigation link' },
 ];
 
-const NavItems = ({ item, index, selectedItem, setSelectedItem }: NavigationListProps) => (
+const NavItems = ({ item, index, selectedItem, setSelectedItem }: NavItemsProps) => (
   <a
     key={index}
     href={item.url}
