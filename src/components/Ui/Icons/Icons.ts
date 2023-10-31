@@ -1,3 +1,3 @@
-import { FileIcon, HeartIcon, MenuIcon, UserIcon } from 'lucide-react';
+import { FileIcon, HeartIcon, MenuIcon, UserIcon, XCircleIcon } from 'lucide-react';
 
-export { FileIcon, HeartIcon, MenuIcon, UserIcon };
+export { FileIcon, HeartIcon, MenuIcon, UserIcon, XCircleIcon };

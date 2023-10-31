@@ -1,4 +1,5 @@
-import { ButtonLoginGoogle, clsx, images, useState } from '../..';
+import { ReactNode } from 'react';
+import { MotionContainer, clsx, motion, useState } from '../..';
 
 interface NavItems {
   name: string;
@@ -8,6 +9,7 @@ interface NavItems {
 
 type NavigationListProps = {
   className?: string;
+  children?: ReactNode;
 };
 
 type NavItemsProps = {
@@ -29,30 +31,23 @@ const NavItems = ({ item, index, selectedItem, setSelectedItem }: NavItemsProps)
     key={index}
     href={item.url}
     aria-label={item.ariaLabel}
-    className={clsx(item.name === selectedItem ? 'pb-4 border-b-2 border-default' : null)}
+    className={clsx(
+      'border-b lg:border-b-0 py-4 lg:py-0',
+      item.name === selectedItem ? 'lg:!pb-4 lg:!border-b-2 lg:!border-default' : null
+    )}
     onClick={() => setSelectedItem(item.name)}>
-    <li>{item.name}</li>
+    <motion.li variants={MotionContainer.item}>{item.name}</motion.li>
   </a>
 );
 
-export const NavigationList = ({ className }: NavigationListProps) => {
+export const NavigationList = ({ className, children }: NavigationListProps) => {
   const [selectedItem, setSelectedItem] = useState('Upload');
 
   return (
-    <nav
-      className={clsx(
-        className,
-        'flex justify-between mx-[-16px] px-8 gap-8 pt-10 text-sm lowercase border-b border-default'
-      )}>
-      <a href="/">
-        <img
-          src={images.LogoDark}
-          alt="randstad Logo"
-          aria-label="randstad Logo"
-          className="max-w-40 max-h-6 mt-[-8px]"
-        />
-      </a>
-      <ul className="flex flex-grow gap-8">
+    <>
+      <motion.ul
+        variants={MotionContainer.container}
+        className={clsx(className, 'flex flex-grow lg:gap-8')}>
         {list.map((item, index) => (
           <NavItems
             item={item}
@@ -61,11 +56,12 @@ export const NavigationList = ({ className }: NavigationListProps) => {
             setSelectedItem={setSelectedItem}
           />
         ))}
-      </ul>
-      <ButtonLoginGoogle
-        text="login with Google"
-        className="self-start hidden mt-[-10px] lg:flex"
-      />
-    </nav>
+        {children && (
+          <a href="#">
+            <li className="py-4">{children}</li>
+          </a>
+        )}
+      </motion.ul>
+    </>
   );
 };

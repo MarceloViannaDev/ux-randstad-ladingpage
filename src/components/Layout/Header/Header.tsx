@@ -1,9 +1,11 @@
-import { Navigation } from '../../index.ts';
+import { Navigation, WrapperFull } from '../../../components';
 
 export const Header = () => {
   return (
-    <header className="h-[80vh]">
-      <Navigation className="hidden lg:flex" />
-    </header>
+    <WrapperFull className="bg-brand-senary">
+      <header className="h-[80vh]">
+        <Navigation />
+      </header>
+    </WrapperFull>
   );
 };
