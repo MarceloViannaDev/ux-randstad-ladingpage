@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { Images } from '../../../Images/Images';
+import GoogleIcon from '../../../../../assets/icons/icon-connect-with-google.svg';
 
 type ButtonLoginGoogleProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   className?: string;
@@ -18,12 +18,7 @@ export const ButtonLoginGoogle: React.FC<ButtonLoginGoogleProps> = ({
         'flex items-center justify-between p-2 gap-1 rounded-full bg-default  text-white text-xs transition-colors duration-200'
       )}
       {...props}>
-      <img
-        src={Images.IconConnectWithGoogle}
-        alt="Google login"
-        aria-label="Login with Google"
-        className="w-4 h-4"
-      />
+      <img src={GoogleIcon} alt="Google login" aria-label="Login with Google" className="w-4 h-4" />
       {text}
     </button>
   );

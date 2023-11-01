@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import PendrivePipeline from '../../../assets/images/pipeline-upload-pendrive.png';
 import {
   Balancer,
   ButtonPrimary,
@@ -8,10 +9,9 @@ import {
   clsx,
   motion,
 } from '../../../components';
-import { Images } from '../../Ui/Images/Images';
 
 const sectionData = {
-  source: Images.PendrivePipeline,
+  source: PendrivePipeline,
   imageSize:
     'max-w-[238px] max-h-[115px] md:max-w-[268px] md:max-h-[145px] xl:max-w-[298px xl:max-h-[215px]',
   alt: 'To import a Timesheet and Attendance file',

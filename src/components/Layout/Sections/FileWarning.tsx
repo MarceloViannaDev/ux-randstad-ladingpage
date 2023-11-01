@@ -1,3 +1,4 @@
+import Warning from '../../../assets/images/pipeline-file-warning.png';
 import {
   Balancer,
   ButtonPrimary,
@@ -7,10 +8,9 @@ import {
   clsx,
   motion,
 } from '../../../components';
-import { Images } from '../../Ui/Images/Images';
 
 const sectionData = {
-  source: Images.FileWarning,
+  source: Warning,
   imageSize:
     'max-w-[238px] max-h-[115px] md:max-w-[268px] md:max-h-[145px] xl:max-w-[298px xl:max-h-[215px]',
   alt: 'Before importing a Timesheet and Attendance file',

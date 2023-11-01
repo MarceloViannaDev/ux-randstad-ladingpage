@@ -1,3 +1,4 @@
+import LogoDark from '../../../assets/images/logo-dark.svg';
 import {
   AnimatePresence,
   ButtonLoginGoogle,
@@ -8,7 +9,6 @@ import {
   WrapperMotionView,
 } from '../../../components';
 import { FileIcon, HeartIcon, MenuIcon, UserIcon, XCircleIcon } from '../../Ui/Icons/Icons';
-import { Images } from '../../Ui/Images/Images';
 import { NavigationList } from './NavigationList';
 
 export const Navigation = () => {
@@ -30,7 +30,7 @@ export const Navigation = () => {
             <a href="/">
               <motion.img
                 variants={MotionContainer.item}
-                src={Images.LogoDark}
+                src={LogoDark}
                 alt="randstad Logo"
                 aria-label="randstad Logo"
                 className="max-w-[120px] md:max-w-max xl:max-h-6 xl:mt-[-8px] z-20 relative"
