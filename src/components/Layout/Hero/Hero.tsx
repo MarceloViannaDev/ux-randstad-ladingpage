@@ -1,3 +1,4 @@
+import TrainPipeline from '../../../assets/images/pipeline-train.png';
 import {
   Balancer,
   ButtonPrimary,
@@ -7,10 +8,9 @@ import {
   clsx,
   motion,
 } from '../../../components';
-import { Images } from '../../Ui/Images/Images.ts';
 
 const heroData = {
-  source: Images.TrainPipeline,
+  source: TrainPipeline,
   imageSize:
     'max-w-[278px] max-h-[165px] md:max-w-[328px] md:max-h-[205px] xl:min-w-[368px] xl:min-h-[255px]',
   alt: 'Randstad Import Pipeline Image',
