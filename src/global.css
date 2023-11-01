@@ -13,6 +13,9 @@
     text-rendering: optimizeLegibility;
     -webkit-text-size-adjust: 100%;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply font-graphik overflow-x-hidden;
   }

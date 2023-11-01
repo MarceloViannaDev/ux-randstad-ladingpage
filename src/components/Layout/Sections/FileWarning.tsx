@@ -19,8 +19,7 @@ const sectionData = {
   description: (
     <>
       You will need to have configured the <strong>Client and Rates.</strong> In order to do so,
-      please select <strong>Configuration</strong> from the button below and follow the
-      instructions.
+      please use in the <strong>Configuration</strong> button below and follow the instructions.
     </>
   ),
 };

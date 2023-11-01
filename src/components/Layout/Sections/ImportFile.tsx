@@ -19,7 +19,8 @@ const sectionData = {
   title: 'To import a Timesheet and Attendance file.',
   description: (
     <>
-      Please select the Import from the <strong>button below and follow the instructions.</strong>
+      Please select the timesheet file to Import from the{' '}
+      <strong>button below and follow the instructions.</strong>
     </>
   ),
 };

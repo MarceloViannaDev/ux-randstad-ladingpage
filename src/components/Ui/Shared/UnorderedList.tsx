@@ -9,9 +9,7 @@ export const UnorderedList = ({ className, children }: UnorderedListProps) => {
   return (
     <ul className={className}>
       {children.map((child, index) => (
-        <li key={index} className={className}>
-          {child}
-        </li>
+        <li key={index}>{child}</li>
       ))}
     </ul>
   );

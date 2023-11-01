@@ -28,6 +28,9 @@ export default {
         'ui-positive-5': '#f4f8f6',
         'ui-warning': '#e9a204',
         'ui-warning-10': '#fcf5e5',
+        '--color-white-alpha-10': 'rgba(255,255,255,0.1)',
+        '--color-white-alpha-30': 'rgba(255,255,255,0.3)',
+        '--color-white-alpha-50': 'rgba(255,255,255,0.5)',
       },
       fontFamily: {
         graphik: ['Graphik Regular', 'sans-serif'],
