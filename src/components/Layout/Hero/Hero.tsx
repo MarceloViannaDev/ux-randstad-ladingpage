@@ -7,7 +7,7 @@ import {
   clsx,
   motion,
 } from '../../../components';
-import { Images } from '../../Ui/Images/Images';
+import { Images } from '../../Ui/Images/Images.ts';
 
 const heroData = {
   source: Images.TrainPipeline,
