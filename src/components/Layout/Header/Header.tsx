@@ -1,10 +1,11 @@
-import { Navigation, WrapperFull } from '../../../components';
+import { Hero, Navigation, WrapperFull } from '../../../components';
 
 export const Header = () => {
   return (
-    <WrapperFull className="bg-brand-senary">
-      <header className="h-[80vh]">
+    <WrapperFull className="section--hero-bg-gradient">
+      <header>
         <Navigation />
+        <Hero />
       </header>
     </WrapperFull>
   );

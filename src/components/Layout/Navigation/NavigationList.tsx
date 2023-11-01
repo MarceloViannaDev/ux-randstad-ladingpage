@@ -50,6 +50,7 @@ export const NavigationList = ({ className, children }: NavigationListProps) => 
         className={clsx(className, 'flex flex-grow lg:gap-8')}>
         {list.map((item, index) => (
           <NavItems
+            key={index}
             item={item}
             index={index}
             selectedItem={selectedItem}

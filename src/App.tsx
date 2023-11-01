@@ -1,3 +1,10 @@
+import { FileWarning, ImportFile } from './components';
+
 export function App() {
-  return <h1>App content</h1>;
+  return (
+    <main>
+      <FileWarning />
+      <ImportFile />
+    </main>
+  );
 }

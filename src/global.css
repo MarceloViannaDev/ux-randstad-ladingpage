@@ -17,3 +17,8 @@
     @apply font-graphik overflow-x-hidden;
   }
 }
+.section--hero-bg-gradient {
+  background: #ffc200;
+  background: -webkit-linear-gradient(0deg, #ffc200 0%, #ffb511 100%);
+  background: linear-gradient(0deg, #ffc200 0%, #ffb511 100%);
+}

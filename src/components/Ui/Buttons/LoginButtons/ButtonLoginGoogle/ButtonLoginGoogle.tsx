@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { images } from '../../..';
+import { Images } from '../../../Images/Images';
 
 type ButtonLoginGoogleProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   className?: string;
@@ -19,7 +19,7 @@ export const ButtonLoginGoogle: React.FC<ButtonLoginGoogleProps> = ({
       )}
       {...props}>
       <img
-        src={images.IconConnectWithGoogle}
+        src={Images.IconConnectWithGoogle}
         alt="Google login"
         aria-label="Login with Google"
         className="w-4 h-4"
