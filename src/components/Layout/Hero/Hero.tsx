@@ -10,6 +10,7 @@ import {
 } from '../../../components';
 
 const heroData = {
+  vScreen: 'calc(100vh - var(--v-screen))',
   source: TrainPipeline,
   imageSize:
     'max-w-[278px] max-h-[165px] md:max-w-[328px] md:max-h-[205px] xl:min-w-[368px] xl:min-h-[255px]',
@@ -27,8 +28,9 @@ export const Hero = () => {
         <motion.section
           initial="hidden"
           animate="visible"
+          style={{ minHeight: heroData.vScreen }}
           variants={MotionContainer.container}
-          className="flex flex-col gap-8 py-16 lowercase md:py-24 md:gap-16 xl:flex-row">
+          className="flex flex-col items-center justify-center gap-8 py-16 lowercase md:py-24 md:gap-16 xl:flex-row">
           <motion.img
             variants={MotionContainer.item}
             className={clsx('self-center xl:order-2', heroData.imageSize)}

@@ -2,11 +2,12 @@ import LogoDark from '../../../assets/images/logo-dark.svg';
 import {
   AnimatePresence,
   ButtonLoginGoogle,
-  motion,
   MotionContainer,
-  useState,
   Wrapper,
   WrapperMotionView,
+  motion,
+  useEffect,
+  useState,
 } from '../../../components';
 import { FileIcon, HeartIcon, MenuIcon, UserIcon, XCircleIcon } from '../../Ui/Icons/Icons';
 import { NavigationList } from './NavigationList';
@@ -17,6 +18,14 @@ export const Navigation = () => {
   const toggleNav = () => {
     setIsNavOpen(!isNavOpen);
   };
+
+  useEffect(() => {
+    if (isNavOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+  }, [isNavOpen]);
 
   return (
     <Wrapper>
@@ -65,7 +74,7 @@ export const Navigation = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="absolute top-0 left-0 z-10 flex flex-col w-full h-screen py-4 pt-16 overflow-hidden bg-white xl:hidden">
+            className="fixed top-0 left-0 z-10 flex flex-col w-full h-screen py-4 pt-16 bg-white xl:hidden">
             <Wrapper>
               <motion.div initial="hidden" animate="visible">
                 <NavigationList className="flex flex-col pt-4">

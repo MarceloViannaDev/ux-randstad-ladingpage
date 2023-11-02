@@ -33,7 +33,7 @@ export const FileWarning = () => {
           initial="hidden"
           animate="visible"
           variants={MotionContainer.container}
-          className="flex flex-col gap-8 py-16 lowercase xl:border-b md:py-24 md:gap-16 xl:flex-row xl:border-b-gray-200">
+          className="flex flex-col gap-8 py-24 lowercase xl:border-b md:gap-16 xl:flex-row xl:border-b-gray-200 xl:py-33">
           <motion.img
             variants={MotionContainer.item}
             className={clsx('self-center xl:order-1', sectionData.imageSize)}

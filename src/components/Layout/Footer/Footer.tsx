@@ -19,34 +19,26 @@ export const Footer = () => {
             <div className="flex flex-col gap-2">
               <h2>Randstad Import Pipeline</h2>
               <UnorderedList className="flex gap-4 text-sm -text--color-white-alpha-30">
-                {[
-                  <a href="#" className={footerLinkHover}>
-                    Home
-                  </a>,
-                  <a href="#" className={footerLinkHover}>
-                    About
-                  </a>,
-                  <a href="#" className={footerLinkHover}>
-                    Contact
-                  </a>,
-                  <a href="#" className={footerLinkHover}>
-                    Privacy
-                  </a>,
-                  <a href="#" className={footerLinkHover}>
-                    Terms
-                  </a>,
-                ]}
+                {['Home', 'About', 'Contact', 'Privacy', 'Terms'].map((text, index) => (
+                  <a key={index} href="#" className={footerLinkHover}>
+                    {text}
+                  </a>
+                ))}
               </UnorderedList>
             </div>
             <UnorderedList className="flex flex-col gap-4 text-sm lg:flex-row -text--color-white-alpha-30">
               {[
                 'Terms & Conditions',
-                'Contatct Us',
+                'Contact Us',
                 'Cookies',
                 'Privacy Notice',
                 'Intellectual Property',
                 'Site Map',
-              ]}
+              ].map((text, index) => (
+                <a key={index} href="#" className={footerLinkHover}>
+                  {text}
+                </a>
+              ))}
             </UnorderedList>
             <p className="pt-8 text-xs border-t -border-t--color-white-alpha-30 -text--color-white-alpha-30">
               <Balancer>{footerRights}</Balancer>

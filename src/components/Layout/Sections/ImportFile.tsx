@@ -51,7 +51,7 @@ export const ImportFile = () => {
           initial="hidden"
           animate="visible"
           variants={MotionContainer.container}
-          className="flex flex-col gap-8 py-16 lowercasemd:py-24 md:gap-16 xl:flex-row ">
+          className="flex flex-col gap-8 pt-12 pb-24 lowercase md:gap-16 xl:flex-row xl:py-33">
           <motion.img
             variants={MotionContainer.item}
             className={clsx('self-center xl:order-2', sectionData.imageSize)}

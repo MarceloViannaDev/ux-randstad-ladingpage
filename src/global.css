@@ -8,6 +8,7 @@
 }
 @layer {
   :root {
+    --v-screen: 60px;
     @apply text-default text-lg font-normal antialiased;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
@@ -18,6 +19,9 @@
   }
   body {
     @apply font-graphik overflow-x-hidden;
+  }
+  .v-screen {
+    height: var(--header-height);
   }
 }
 .section--hero-bg-gradient {

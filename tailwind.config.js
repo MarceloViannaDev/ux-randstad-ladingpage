@@ -35,6 +35,10 @@ export default {
       fontFamily: {
         graphik: ['Graphik Regular', 'sans-serif'],
       },
+      padding: {
+        33: '9rem',
+        17: '4.5rem',
+      },
     },
   },
   plugins: [],
