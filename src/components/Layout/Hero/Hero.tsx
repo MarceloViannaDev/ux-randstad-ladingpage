@@ -16,7 +16,8 @@ const heroData = {
     'max-w-[278px] max-h-[165px] md:max-w-[328px] md:max-h-[205px] xl:min-w-[368px] xl:min-h-[255px]',
   alt: 'Randstad Import Pipeline Image',
   aria: 'Randstad Import Pipeline Train Image Illustration',
-  title: 'Randstad Import Pipeline.',
+  title: 'Welcome to',
+  subtitle: 'Randstad Import Pipeline.',
   description:
     'Welcome to Randstad Import Pipeline, this service will allow you to import your Timesheet & Attendance records into Randstad payroll system.',
 };
@@ -43,10 +44,15 @@ export const Hero = () => {
               <motion.div
                 variants={MotionContainer.container}
                 className="flex flex-col gap-2 basis-1/2">
-                <motion.h1
+                <motion.strong
                   variants={MotionContainer.item}
                   className="text-2xl md:text-4xl xl:text-6xl">
                   {heroData.title}
+                </motion.strong>
+                <motion.h1
+                  variants={MotionContainer.item}
+                  className="text-2xl md:text-4xl xl:text-6xl">
+                  {heroData.subtitle}
                 </motion.h1>
                 <motion.p variants={MotionContainer.item} className="text-sm md:text-base">
                   <Balancer>{heroData.description}</Balancer>
