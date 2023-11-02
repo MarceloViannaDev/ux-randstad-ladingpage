@@ -5,6 +5,7 @@ import {
   MotionContainer,
   Wrapper,
   WrapperMotionView,
+  clsx,
   motion,
   useEffect,
   useState,
@@ -69,29 +70,33 @@ export const Navigation = () => {
       </WrapperMotionView>
       <AnimatePresence>
         {isNavOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
-            className="fixed top-0 left-0 z-10 flex flex-col w-full h-screen py-4 pt-16 bg-white xl:hidden">
-            <Wrapper>
-              <motion.div initial="hidden" animate="visible">
-                <NavigationList className="flex flex-col pt-4">
-                  <ButtonLoginGoogle text="login with Google" />
-                </NavigationList>
-              </motion.div>
-              <motion.div variants={MotionContainer.item}>
-                <button onClick={toggleNav}>
-                  <XCircleIcon
-                    size={32}
-                    strokeWidth={1.5}
-                    className="absolute top-3 right-3 md:right-8"
-                  />
-                </button>
-              </motion.div>
-            </Wrapper>
-          </motion.div>
+          <nav>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className={clsx(
+                'fixed top-0 left-0 z-10 flex flex-col w-full h-screen py-4 pt-16 bg-white'
+              )}>
+              <Wrapper>
+                <motion.div initial="hidden" animate="visible">
+                  <NavigationList className="flex flex-col pt-4">
+                    <ButtonLoginGoogle text="login with Google" />
+                  </NavigationList>
+                </motion.div>
+                <motion.div variants={MotionContainer.item}>
+                  <button onClick={toggleNav}>
+                    <XCircleIcon
+                      size={32}
+                      strokeWidth={1.5}
+                      className="absolute top-3 right-3 md:right-8"
+                    />
+                  </button>
+                </motion.div>
+              </Wrapper>
+            </motion.div>
+          </nav>
         )}
       </AnimatePresence>
     </Wrapper>
