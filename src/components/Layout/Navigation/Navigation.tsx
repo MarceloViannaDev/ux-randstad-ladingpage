@@ -28,6 +28,11 @@ export const Navigation = () => {
     }
   }, [isNavOpen]);
 
+  const [viewportWidth, setViewportWidth] = useState(0);
+  useEffect(() => {
+    setViewportWidth(document.documentElement.clientWidth);
+  }, []);
+
   return (
     <Wrapper>
       <WrapperMotionView>
@@ -77,7 +82,8 @@ export const Navigation = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.2 }}
               className={clsx(
-                'fixed top-0 left-0 z-10 flex flex-col w-full h-screen py-4 pt-16 bg-white'
+                'fixed top-0 left-0 z-10 flex flex-col w-full h-screen py-4 pt-16 bg-white',
+                viewportWidth <= 280 && 'max-w-[280px]'
               )}>
               <Wrapper>
                 <motion.div initial="hidden" animate="visible">
