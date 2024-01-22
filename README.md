@@ -1,6 +1,8 @@
-# React + TypeScript + Vite
+# Landing page for Randstad Demo Application
 
-Lading page for Randstad Demo Application Import Pipeline.
+Landing page for Randstad Demo Application Import Pipeline following the company's clean and model design.
+
+React + TypeScript + Tailwind + Framer Motion
 
 ## Demo
 
